@@ -60,12 +60,12 @@ class Artist
 
   # Other behaviour
 
-  # def albums()
-  #   # get all albums by this artist from db
-  #   sql = "SELECT * FROM albums WHERE artist_id = $1;"
-  #   values = [@id]
-  #   albums = SqlRunner.run(sql, "get_artist_albums", values).first()
-  #   return albums.map { |album| Album.new(album) }
-  # end
+  def albums()
+    # get all albums by this artist from db
+    sql = "SELECT * FROM albums WHERE artist_id = $1;"
+    values = [@id]
+    albums = SqlRunner.run(sql, "get_artist_albums", values)
+    return albums.map { |album| Album.new(album) }
+  end
 
 end
