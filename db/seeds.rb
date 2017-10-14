@@ -1,7 +1,7 @@
 require('pry-byebug')
 require_relative('../models/artist')
 
-# Album.delete_all()
+Album.delete_all()
 Artist.delete_all()
 
 # create and save artist/s
