@@ -86,28 +86,28 @@ class Album
     return Artist.new(artist)
   end
 
-  # def out_of_stock()
-  #   # get out of stock albums from db
-  #   sql = "SELECT * FROM albums WHERE stock_level = $1;"
-  #   values = ["Out of stock"]
-  #   results = SqlRunner.run(sql, "get_out_of_stock", values)
-  #   return results.map { |album| Album.new(album) }
-  # end
-  #
-  # def low_stock()
-  #   # get out of stock albums from db
-  #   sql = "SELECT * FROM albums WHERE stock_level = $1;"
-  #   values = ["Low"]
-  #   results = SqlRunner.run(sql, "get_low_stock", values)
-  #   return results.map { |album| Album.new(album) }
-  # end
-  #
-  # def high_stock()
-  #   # get out of stock albums from db
-  #   sql = "SELECT * FROM albums WHERE stock_level = $1;"
-  #   values = ["High"]
-  #   results = SqlRunner.run(sql, "get_high_stock", values)
-  #   return results.map { |album| Album.new(album) }
-  # end
+  def self.out_of_stock()
+    # get out of stock albums from db
+    sql = "SELECT * FROM albums WHERE stock_level = $1;"
+    values = ["Out of stock"]
+    results = SqlRunner.run(sql, "get_out_of_stock", values)
+    return results.map { |album| Album.new(album) }
+  end
+
+  def self.low_stock()
+    # get out of stock albums from db
+    sql = "SELECT * FROM albums WHERE stock_level = $1;"
+    values = ["Low"]
+    results = SqlRunner.run(sql, "get_low_stock", values)
+    return results.map { |album| Album.new(album) }
+  end
+
+  def self.high_stock()
+    # get out of stock albums from db
+    sql = "SELECT * FROM albums WHERE stock_level = $1;"
+    values = ["High"]
+    results = SqlRunner.run(sql, "get_high_stock", values)
+    return results.map { |album| Album.new(album) }
+  end
 
 end
