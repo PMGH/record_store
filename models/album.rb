@@ -3,7 +3,8 @@ require_relative('artist')
 
 class Album
 
-  attr_reader :id, :title, :in_stock, :stock_level, :artist_id
+  attr_accessor :title, :in_stock, :stock_level, :artist_id
+  attr_reader :id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -23,29 +24,29 @@ class Album
     @id = results[0]['id'].to_i
   end
 
-  # def self.all()
-  #   # get all albums
-  #   sql = "SELECT * FROM albums;"
-  #   values = []
-  #   results = SqlRunner.run(sql, "get_albums", values)
-  #   return results.map { |album| Album.new(album) }
-  # end
-  #
-  # def self.find(id)
-  #   # find a specific album
-  #   sql = "SELECT * FROM albums WHERE id = $1;"
-  #   values = [id]
-  #   album = SqlRunner.run(sql, "get_album", values).first()
-  #   return Album.new(album)
-  # end
-  #
-  # def update()
-  #   # update an album in db
-  #   sql = "UPDATE albums (title, in_stock, stock_level, artist_id) = ($1, $2, $3, $4) WHERE id = $1;"
-  #   values = [@title, @in_stock, @stock_level, @artist_id]
-  #   SqlRunner.run(sql, "update_album", values)
-  # end
-  
+  def self.all()
+    # get all albums
+    sql = "SELECT * FROM albums;"
+    values = []
+    results = SqlRunner.run(sql, "get_albums", values)
+    return results.map { |album| Album.new(album) }
+  end
+
+  def self.find(id)
+    # find a specific album
+    sql = "SELECT * FROM albums WHERE id = $1;"
+    values = [id]
+    album = SqlRunner.run(sql, "get_album", values).first()
+    return Album.new(album)
+  end
+
+  def update()
+    # update an album in db
+    sql = "UPDATE albums SET (title, in_stock, stock_level, artist_id) = ($1, $2, $3, $4) WHERE id = $5;"
+    values = [@title, @in_stock, @stock_level, @artist_id, @id]
+    SqlRunner.run(sql, "update_album", values)
+  end
+
   def self.delete_all()
     # clear all albums from db (e.g. test data before go-live)
     sql = "DELETE FROM albums;"
@@ -53,12 +54,12 @@ class Album
     SqlRunner.run(sql, "delete_albums", values)
   end
 
-  # def delete()
-  #   # delete a specific album from db
-  #   sql = "DELETE FROM albums WHERE id = $1;"
-  #   values = [@id]
-  #   SqlRunner.run(sql, "delete_album", values)
-  # end
+  def delete()
+    # delete a specific album from db
+    sql = "DELETE FROM albums WHERE id = $1;"
+    values = [@id]
+    SqlRunner.run(sql, "delete_album", values)
+  end
 
   # Other behaviour
 
