@@ -1,14 +1,13 @@
 require('pry-byebug')
-
 require_relative('../models/artist')
 
-Album.delete_all()
+# Album.delete_all()
 Artist.delete_all()
 
 # create and save artist/s
-artist1 = Artist.new( 'name' => 'Pearl Jam' )
+artist1 = Artist.new({ 'name' => 'Pearl Jam' })
 artist1.save()
-artist2 = Artist.new( 'name' => 'Arcane Roots' )
+artist2 = Artist.new({ 'name' => 'Arcane Roots' })
 artist2.save()
 
 # create and save albums
@@ -36,6 +35,3 @@ album9.save()
 album10.save()
 album11.save()
 album12.save()
-
-binding.pry
-nil
