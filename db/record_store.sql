@@ -1,17 +1,16 @@
-DROP TABLE IF EXISTS artists;
 DROP TABLE IF EXISTS albums;
+DROP TABLE IF EXISTS artists;
 
+
+CREATE TABLE artists(
+  id SERIAL8 PRIMARY KEY,
+  name VARCHAR(255) NOT NULL
+);
 
 CREATE TABLE albums(
   id SERIAL8 PRIMARY KEY,
   title VARCHAR(255) NOT NULL,
   in_stock INT4,
-  stock_level VARCHAR(20)
-);
-
-
-CREATE TABLE artists(
-  id SERIAL8 PRIMARY KEY,
-  name VARCHAR(255) NOT NULL,
-  album_id INT8 REFERENCES albums(id) ON DELETE CASCADE
+  stock_level VARCHAR(20),
+  artist_id INT8 REFERENCES artists(id) ON DELETE CASCADE
 );
