@@ -1,0 +1,43 @@
+## Big Al's Record Store
+
+The owner of Big Al's Record Store wants an app which will help him keep on top of his store inventory. He does not want an app that customers will see, but he will use to check stock levels and see what he needs to order soon.
+
+You should be able to add stock, which would have an Artist and Album as well as the quantity available.
+
+### MVP:
+
+- Create albums with the quantity that are in stock
+- Create artists
+- Show an inventory page listing albums and artists
+- Show a stock level for the inventory items e.g. High/Medium/Low
+
+### Possible Extensions:
+
+- Add a buy and sell price to each stock item
+- Calculate the possible markup on items and show on inventory page
+- Add a genre to an Album
+- Any other ideas you might come up with
+
+
+
+MVP:
+
+  1) Create Albums
+      Create Album class (id, title, year, album_artwork(url), num_of_songs, length, artist_id, in_stock)
+      Link on web page to create album
+  2) Create Artists
+      Create Artist class (id, name, bio)
+      Link on web page to create artist (as part of add album?)
+  3) Inventory page on website
+      (layout.erb)
+  4) Stock Level
+      case in_stock
+      when 0
+        return "Out of stock"
+      when (1..4)
+        return "Low"
+      when (5-15)
+        return "Medium"
+      when >15
+        return "High"
+      end
