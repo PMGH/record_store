@@ -78,14 +78,14 @@ class Album
 
   end
 
-  # def artist()
-  #   # get the artist of the album
-  #   sql = "SELECT * FROM artists WHERE id = $1;"
-  #   values = [@artist_id]
-  #   artist = SqlRunner.run(sql, "get_album_artist", values).first()
-  #   return Artist.new(artist)
-  # end
-  #
+  def artist()
+    # get the artist of the album
+    sql = "SELECT * FROM artists WHERE id = $1;"
+    values = [@artist_id]
+    artist = SqlRunner.run(sql, "get_album_artist", values).first()
+    return Artist.new(artist)
+  end
+
   # def out_of_stock()
   #   # get out of stock albums from db
   #   sql = "SELECT * FROM albums WHERE stock_level = $1;"
