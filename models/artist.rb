@@ -20,42 +20,42 @@ class Artist
     @id = results[0]['id'].to_i
   end
 
-  # def self.all()
-  #   # get all artists
-  #   sql = "SELECT * FROM artists;"
-  #   values = []
-  #   results = SqlRunner.run(sql, "get_artists", values)
-  #   return results.map { |artist| Artist.new(artist) }
-  # end
-  #
-  # def self.find(id)
-  #   # find a specific artist
-  #   sql = "SELECT * FROM artists WHERE id = $1;"
-  #   values = [id]
-  #   album = SqlRunner.run(sql, "get_artist", values).first()
-  #   return Artist.new(artist)
-  # end
-  #
-  # def update()
-  #   # update an artist in db
-  #   sql = "UPDATE artists (name) = ($1) WHERE id = $1;"
-  #   values = [@name]
-  #   SqlRunner.run(sql, "update_artist", values)
-  # end
-  #
-  # def self.delete_all()
-  #   # clear all artists from db (e.g. test data before go-live)
-  #   sql = "DELETE FROM artists;"
-  #   values = []
-  #   SqlRunner.run(sql, "delete_artists", values)
-  # end
-  #
-  # def delete()
-  #   # delete a specific artist from db
-  #   sql = "DELETE FROM artists WHERE id = $1;"
-  #   values = [@id]
-  #   SqlRunner.run(sql, "delete_artist", values)
-  # end
+  def self.all()
+    # get all artists
+    sql = "SELECT * FROM artists;"
+    values = []
+    results = SqlRunner.run(sql, "get_artists", values)
+    return results.map { |artist| Artist.new(artist) }
+  end
+
+  def self.find(id)
+    # find a specific artist
+    sql = "SELECT * FROM artists WHERE id = $1;"
+    values = [id]
+    artist = SqlRunner.run(sql, "get_artist", values).first()
+    return Artist.new(artist)
+  end
+
+  def update()
+    # update an artist in db
+    sql = "UPDATE artists (name) = ($1) WHERE id = $1;"
+    values = [@name]
+    SqlRunner.run(sql, "update_artist", values)
+  end
+
+  def self.delete_all()
+    # clear all artists from db (e.g. test data before go-live)
+    sql = "DELETE FROM artists;"
+    values = []
+    SqlRunner.run(sql, "delete_artists", values)
+  end
+
+  def delete()
+    # delete a specific artist from db
+    sql = "DELETE FROM artists WHERE id = $1;"
+    values = [@id]
+    SqlRunner.run(sql, "delete_artist", values)
+  end
 
   # Other behaviour
 
