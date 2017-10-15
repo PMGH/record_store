@@ -1,5 +1,23 @@
 <article class="content">
 
+  <div class="stock_buttons">
+    <form action="/big_als" method="GET">
+      <input type="submit" value="All stock" class="btn btn--all_stock">
+    </form>
+
+    <form action="/big_als/out_of_stock" method="GET">
+      <input type="submit" value="Out of Stock" class="btn btn--oos">
+    </form>
+
+    <form action="/big_als/low_stock" method="GET">
+      <input type="submit" value="Low Stock" class="btn btn--low">
+    </form>
+
+    <form action="/big_als/high_stock" method="GET">
+      <input type="submit" value="High Stock" class="btn btn--high">
+    </form>
+  </div>
+
   <% for artist in @artists do %>
   <% if @low_artists.include?(artist.id()) %>
   <section class="artist_albums">

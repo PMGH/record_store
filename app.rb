@@ -43,3 +43,18 @@ get '/big_als/low_stock' do
   end
   erb( :"low_stock/index" )
 end
+
+# get all high stock albums
+get '/big_als/high_stock' do
+  @artists = Artist.all()
+  @high_albums = Album.high_stock()
+  @high_artists = []
+  for album in @high_albums
+    if @high_albums.include?(album.artist_id())
+      next
+    else
+      @high_artists << album.artist_id()
+    end
+  end
+  erb( :"high_stock/index" )
+end

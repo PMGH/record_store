@@ -1,0 +1,48 @@
+<article class="content">
+
+  <div class="stock_buttons">
+    <form action="/big_als" method="GET">
+      <input type="submit" value="All stock" class="btn btn--all_stock">
+    </form>
+
+    <form action="/big_als/out_of_stock" method="GET">
+      <input type="submit" value="Out of Stock" class="btn btn--oos">
+    </form>
+
+    <form action="/big_als/low_stock" method="GET">
+      <input type="submit" value="Low Stock" class="btn btn--low">
+    </form>
+
+    <form action="/big_als/high_stock" method="GET">
+      <input type="submit" value="High Stock" class="btn btn--high">
+    </form>
+  </div>
+
+  <% for artist in @artists do %>
+  <% if @high_artists.include?(artist.id()) %>
+  <section class="artist_albums">
+    <div class="flex artist">
+      <h1 class="artist_name"><%= artist.name() %></h1>
+      <form action="/big_als/artists/<%= artist.id() %>/edit" method="GET">
+        <input type="submit" value="Edit Artist" class="btn btn--edit">
+      </form>
+    </div>
+    <% end %>
+
+    <% for album in artist.albums() do %>
+    <% if album.stock_level() == "High" %>
+    <div class="flex album <%= album.stock_level() %>">
+      <h2 class="album_title"><%= album.title() %></h2>
+      <h3 class="stock_level"><%= album.stock_level() %></h3>
+
+      <form action="/big_als/albums/<%= album.artist_id() %>/edit" method="GET">
+        <input type="submit" value="Edit" class="btn btn--edit">
+      </form>
+    </div>
+    <% end %>
+    <% end %>
+
+  </section>
+  <% end %>
+
+</article>

@@ -19,3 +19,53 @@
   align-self: flex-end;
   margin: 10px;
 }
+
+.btn--all_stock, .btn--oos, .btn--low, .btn--high {
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.btn--all_stock {
+  border: 1px solid #18314F;
+}
+
+.btn--oos {
+  border: 1px solid #D9543C;
+}
+
+
+.btn--low {
+  border: 1px solid #FFA500;
+}
+
+
+.btn--high {
+  border: 1px solid #41996E;
+}
+
+.btn--all_stock:hover {
+  background-color: #18314F;
+  border: 1px solid #18314F;
+  color: white;
+}
+
+.btn--oos:hover {
+  background-color: #D9543C;
+  border: 1px solid #D9543C;
+  color: white;
+}
+
+
+.btn--low:hover {
+  background-color: #FFA500;
+  border: 1px solid #FFA500;
+  color: white;
+}
+
+
+.btn--high:hover {
+  background-color: #41996E;
+  border: 1px solid #41996E;
+  color: white;
+}
