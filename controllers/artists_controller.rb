@@ -26,6 +26,7 @@ post '/big_als/artists/new' do
   erb( :"artists/create" )
 end
 
+# update existing artist
 post '/big_als/artists/:id' do
   artist = Artist.new(params)
   artist.update()

@@ -1,0 +1,30 @@
+<article class="content">
+
+  <% for artist in @artists do %>
+  <% if @oos_artists.include?(artist.id()) %>
+  <section class="artist_albums">
+    <div class="flex artist">
+      <h1 class="artist_name"><%= artist.name() %></h1>
+      <form action="/big_als/artists/<%= artist.id() %>/edit" method="GET">
+        <input type="submit" value="Edit Artist" class="btn btn--edit">
+      </form>
+    </div>
+    <% end %>
+
+    <% for album in artist.albums() do %>
+    <% if album.stock_level() == "Out of stock" %>
+    <div class="flex album <%= album.stock_level() %>">
+      <h2 class="album_title"><%= album.title() %></h2>
+      <h3 class="stock_level"><%= album.stock_level() %></h3>
+
+      <form action="/big_als/albums/<%= album.artist_id() %>/edit" method="GET">
+        <input type="submit" value="Edit" class="btn btn--edit">
+      </form>
+    </div>
+    <% end %>
+    <% end %>
+
+  </section>
+  <% end %>
+
+</article>
