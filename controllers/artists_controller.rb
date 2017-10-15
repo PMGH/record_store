@@ -4,7 +4,7 @@ require('sinatra/contrib/all')
 require_relative('../models/artist')
 
 # add new artist
-get '/big_als/artist/new' do
+get '/big_als/artists/new' do
   erb( :"artists/new" )
 end
 
@@ -18,7 +18,7 @@ end
 #   erb( :"artists/show" )
 # end
 
-post '/big_als/artist/new' do
+post '/big_als/artists/new' do
   artist = Artist.new(params)
   artist.save()
   erb( :"artists/create" )
