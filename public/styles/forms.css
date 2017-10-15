@@ -1,0 +1,34 @@
+.form {
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  padding: 5%;
+  margin: 5% 30%;
+  min-width: 200px;
+}
+
+label {
+  margin: 10px;
+  flex: 1 1 auto;
+  width: 25%
+}
+
+select {
+  flex-shrink: 1;
+  width: 67%;
+}
+
+input[type="text"] {
+  flex-shrink: 1;
+  height: 12px;
+  width: 65%;
+}
+
+input[type="number"] {
+  flex-shrink: 1;
+  height: 12px;
+  width: 65%;
+}

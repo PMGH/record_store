@@ -14,3 +14,8 @@
   background-color: red;
   border: 1px solid red;
 }
+
+.btn--submit {
+  align-self: flex-end;
+  margin: 10px;
+}
