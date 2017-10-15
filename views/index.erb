@@ -4,6 +4,10 @@
     <input type="submit" value="Out of Stock" class="btn">
   </form>
 
+  <form action="/big_als/low_stock" method="GET">
+    <input type="submit" value="Low Stock" class="btn">
+  </form>
+
   <% for artist in @artists do %>
   <section class="artist_albums">
     <div class="flex artist">

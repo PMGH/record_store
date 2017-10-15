@@ -28,3 +28,18 @@ get '/big_als/out_of_stock' do
   end
   erb( :"out_of_stock/index" )
 end
+
+# get all low stock albums
+get '/big_als/low_stock' do
+  @artists = Artist.all()
+  @low_albums = Album.low_stock()
+  @low_artists = []
+  for album in @low_albums
+    if @low_albums.include?(album.artist_id())
+      next
+    else
+      @low_artists << album.artist_id()
+    end
+  end
+  erb( :"low_stock/index" )
+end
