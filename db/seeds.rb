@@ -21,8 +21,8 @@ album7 = Album.new({ 'title' => 'Riot Act', 'in_stock' => 15, 'artist_id' => art
 album8 = Album.new({ 'title' => 'Pearl Jam', 'in_stock' => 16, 'artist_id' => artist1.id() })
 album9 = Album.new({ 'title' => 'Backspacer', 'in_stock' => 5, 'artist_id' => artist1.id() })
 album10 = Album.new({ 'title' => 'Lightning Bolt', 'in_stock' => 0, 'artist_id' => artist1.id() })
-album11 = Album.new({ 'title' => 'Blood and Chemistry', 'in_stock' => 2, 'artist_id' => artist1.id() })
-album12 = Album.new({ 'title' => 'Melancholia Hymns', 'in_stock' => 10, 'artist_id' => artist1.id() })
+album11 = Album.new({ 'title' => 'Blood and Chemistry', 'in_stock' => 2, 'artist_id' => artist2.id() })
+album12 = Album.new({ 'title' => 'Melancholia Hymns', 'in_stock' => 10, 'artist_id' => artist2.id() })
 album1.save()
 album2.save()
 album3.save()
@@ -35,3 +35,6 @@ album9.save()
 album10.save()
 album11.save()
 album12.save()
+
+binding.pry
+nil
