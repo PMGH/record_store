@@ -8,6 +8,7 @@ require_relative('./models/artist')
 require_relative('./models/album')
 
 
+# get all artists and their albums
 get '/big_als' do
   @artists = Artist.all()
   erb( :index )
