@@ -17,6 +17,7 @@ nav ul {
 
 #logo {
   color: darkred;
+  font-weight: bold;
 }
 
 #logo_img {
@@ -38,7 +39,7 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 20px;
+  font-size: 26px;
 }
 
 h2 {
@@ -53,7 +54,8 @@ h3 {
 /* stock index */
 
 .artist_albums {
-  border-bottom: 2px solid grey;
+  border-bottom: 2px solid lightgrey;
+  padding: 10px 0px;
   margin: 30px 300px;
 }
 
@@ -70,20 +72,29 @@ h3 {
   margin: 5px;
 }
 
+.artist_name, .album_title {
+  flex: 1 1 auto;
+}
+
+.stock_level {
+  margin-right: 20px;
+}
+
 .album {
-  background: red;
+  background: #D9543C;
+  border-radius: 2px;
   padding: 10px;
   margin: 10px;
 }
 
 .Low {
-  background: orange;
+  background: #FFA500;
 }
 
 .Medium {
-  background: grey;
+  background: #C6BAA7;
 }
 
 .High {
-  background: green;
+  background: #274665;
 }

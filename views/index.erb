@@ -3,18 +3,27 @@
   <% for artist in @artists do %>
   <section class="artist_albums">
     <div class="flex artist">
-      <h1><%= artist.name() %></h1>
-      <form action="/big_als/album/:id/edit" method="GET">
-        <input type="submit" value="Edit Artist">
+      <h1 class="artist_name"><%= artist.name() %></h1>
+      <form action="/big_als/artists/:id/edit" method="GET">
+        <input type="submit" value="Edit Artist" class="btn btn--edit">
+      </form>
+
+      <form action="/big_als/artists/delete" method="GET">
+        <input type="submit" value="Delete Artist" class="btn btn--delete">
       </form>
     </div>
 
     <% for album in artist.albums() do %>
     <div class="flex album <%= album.stock_level() %>">
-      <h2><%= album.title() %></h2>
-      <h3><%= album.stock_level() %></h3>
-      <form action="/big_als/album/:id/edit" method="GET">
-        <input type="submit" value="Edit">
+      <h2 class="album_title"><%= album.title() %></h2>
+      <h3 class="stock_level"><%= album.stock_level() %></h3>
+
+      <form action="/big_als/albums/:id/edit" method="GET">
+        <input type="submit" value="Edit" class="btn btn--edit">
+      </form>
+
+      <form action="/big_als/albums/delete" method="GET">
+        <input type="submit" value="Delete" class="btn btn--delete">
       </form>
     </div>
     <% end %>

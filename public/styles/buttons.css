@@ -1,0 +1,16 @@
+.btn {
+  background: white;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  margin-left: 20px;
+}
+
+.btn--edit:hover {
+  background-color: darkorange;
+  border: 1px solid darkorange;
+}
+
+.btn--delete:hover {
+  background-color: red;
+  border: 1px solid red;
+}
