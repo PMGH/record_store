@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+}
+
+nav ul {
+  background: black;
+  color: white;
+  font-size: 28px;
+  list-style-type: none;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin: 0px 0px 30px 0px;
+}
+
+#logo {
+  color: darkred;
+}
+
+#logo_img {
+  width: 50px;
+}
+
+.nav_link {
+  color: white;
+  text-decoration: none;
+}
+
+.nav_link:hover {
+  color: darkred;
+}
+
+h1, h2, h3 {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+
+/* stock index */
+
+.artist_albums {
+  border-bottom: 2px solid grey;
+  margin: 30px 300px;
+}
+
+.flex {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: baseline;
+}
+
+.artist {
+  padding: 5px;
+  margin: 5px;
+}
+
+.album {
+  background: red;
+  padding: 10px;
+  margin: 10px;
+}
+
+.Low {
+  background: orange;
+}
+
+.Medium {
+  background: grey;
+}
+
+.High {
+  background: green;
+}
