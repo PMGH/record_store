@@ -62,7 +62,7 @@ class Artist
 
   def albums()
     # get all albums by this artist from db
-    sql = "SELECT * FROM albums WHERE artist_id = $1;"
+    sql = "SELECT * FROM albums WHERE artist_id = $1 ORDER BY in_stock ASC;"
     values = [@id]
     albums = SqlRunner.run(sql, "get_artist_albums", values)
     return albums.map { |album| Album.new(album) }
