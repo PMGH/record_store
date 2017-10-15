@@ -1,0 +1,19 @@
+<form class="new_artist" action="/big_als/albums/new" method="POST">
+  <label for="artistSelect">Artist:</label>
+    <select name="artist_id" required="required" id="artistSelect">
+      <option disabled selected value> -- Select an Artist -- </option>
+
+      <% @artists.each do |artist| %>
+      <option value="<%= artist.id() %>"><%= artist.name() %></option>
+      <% end %>
+      <option disabled value> -- Add new artist if not available -- </option>
+    </select>
+
+  <label for="albumTitle">Album: </label>
+  <input type="text" required="required" name="title" id="albumTitle">
+
+  <label for="inStock">Stock: </label>
+  <input type="number" required="required" name="in_stock" id="inStock">
+
+  <input type="submit" value="Submit">
+</form>
