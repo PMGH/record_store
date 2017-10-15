@@ -5,15 +5,21 @@
   margin-left: 20px;
 }
 
+.btn:hover {
+  cursor: pointer;
+}
+
 .btn--edit:hover {
   background-color: darkorange;
   border: 1px solid darkorange;
 }
 
+
 .btn--delete:hover {
   background-color: red;
   border: 1px solid red;
 }
+
 
 .btn--submit {
   align-self: flex-end;
@@ -43,6 +49,7 @@
 .btn--high {
   border: 1px solid #41996E;
 }
+
 
 .btn--all_stock:hover {
   background-color: #18314F;
