@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="/icons/favicon.png?v=1.1">
+  <link rel="stylesheet" href="/styles/structure.css">
+  <link rel="stylesheet" href="/styles/forms.css">
+  <title>Big Al's</title>
+</head>
+<body>
+  <main>
+    <nav>
+      <ul>
+        <li id="logo"><img src="/icons/logo.png" alt="Big Al's store logo - image of grey headphones" id="logo_img"/>Big Al's</li>
+        <li><a class="nav_link" href="/big_als">Stock</a></li>
+        <li><a class="nav_link" href="/big_als/artist/new">New Artist</a></li>
+        <li><a class="nav_link" href="/big_als/album/new">New Album</a></li>
+
+        <li><a class="nav_link" href="#">Discounts</a></li>
+      </ul>
+    </nav>
+    <section id="content">
+      <%= yield %>
+    </section>
+  </main>
+</body>
+</html>

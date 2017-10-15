@@ -1,0 +1,25 @@
+<article class="content">
+
+  <% for artist in @artists do %>
+  <section class="artist_albums">
+    <div class="flex artist">
+      <h1><%= artist.name() %></h1>
+      <form action="/big_als/album/:id/edit" method="GET">
+        <input type="submit" value="Edit Artist">
+      </form>
+    </div>
+
+    <% for album in artist.albums() do %>
+    <div class="flex album <%= album.stock_level() %>">
+      <h2><%= album.title() %></h2>
+      <h3><%= album.stock_level() %></h3>
+      <form action="/big_als/album/:id/edit" method="GET">
+        <input type="submit" value="Edit">
+      </form>
+    </div>
+    <% end %>
+
+  </section>
+  <% end %>
+
+</article>
