@@ -1,0 +1,28 @@
+<form class="form" id="edit_album" action="/big_als/albums/<%= @album.id() %>" method="POST">
+  <label for="artistSelect">Artist:</label>
+  <select name="artist_id" required="required" id="artistSelect">
+    <option disabled value> -- Select an Artist -- </option>
+    <option selected value="<%= @album.artist().id() %>"><%= @album.artist().name() %></option>
+
+    <% selected = @album.artist().name() %>
+    <% @artists.each do |artist| %>
+    <% if artist.name() != selected %>
+      <option value="<%= artist.id() %>"><%= artist.name() %></option>
+    <% end %>
+    <% end %>
+
+    <option disabled value> -- Add new artist if not available -- </option>
+  </select>
+
+  <label for="albumTitle">Album:</label>
+  <input type="text" required="required" name="title" id="albumTitle" value="<%= @album.title() %>">
+
+  <label for="inStock">Quantity:</label>
+  <input type="number" name="in_stock" id="inStock" value="<%= @album.in_stock() %>">
+
+  <input class="btn btn--submit" type="submit" value="Amend details">
+</form>
+
+<form class="form" id="delete_album" action="/big_als/albums/<%= @album.id() %>/delete" method="POST">
+  <input class="btn btn--delete" type="submit" value="Delete Album">
+</form>
