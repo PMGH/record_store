@@ -1,6 +1,6 @@
 <h2 class="form_heading">Edit Album</h2>
 <form class="form" id="edit_album" action="/big_als/albums/<%= @album.id() %>" method="POST">
-  <label for="artistSelect">Artist:</label>
+  <label for="artistSelect">Artist*</label>
   <select name="artist_id" required="required" id="artistSelect">
     <option disabled value> -- Select an Artist -- </option>
     <option selected value="<%= @album.artist().id() %>"><%= @album.artist().name() %></option>
@@ -15,11 +15,11 @@
     <option disabled value> -- Add new artist if not available -- </option>
   </select>
 
-  <label for="albumTitle">Album:</label>
-  <input type="text" required="required" name="title" id="albumTitle" value="<%= @album.title() %>">
+  <label for="albumTitle">Album*</label>
+  <input type="text" required="required" name="title" id="albumTitle" value="<%= @album.title() %>" placeholder="e.g. Ten">
 
-  <label for="inStock">Quantity:</label>
-  <input type="number" name="in_stock" id="inStock" value="<%= @album.in_stock() %>">
+  <label for="inStock">Quantity*</label>
+  <input type="number" name="in_stock" id="inStock" value="<%= @album.in_stock() %>" placeholder="e.g. 12">
 
   <input class="btn btn--submit" type="submit" value="Amend details">
 </form>
