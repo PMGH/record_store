@@ -116,8 +116,9 @@ h3 {
   color: grey;
 }
 
-.album_artwork {
+.artist_image, .album_artwork {
   float: left;
+  margin-top: 12px;
   margin-left: 1%;
   width: 22.5%;
 }

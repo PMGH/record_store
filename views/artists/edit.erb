@@ -1,7 +1,8 @@
 <h2 class="form_heading">Edit Artist</h2>
 
+<img class="artist_image" src="<%= @artist.image() %>" alt="Image of <%= @artist.name() %>">
+
 <form class="form" id="edit_artist" action="/big_als/artists/<%= @artist.id() %>" method="POST">
-  <img src="<%= @artist.image() %>" alt="Image of <%= @artist.name() %>">
 
   <label for="artistName">Artist*</label>
   <input type="text" name="name" required="required" id="artistName" value="<%= @artist.name() %>" placeholder="e.g. Pearl Jam">
