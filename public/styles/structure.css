@@ -115,3 +115,9 @@ h3 {
 .no_albums_message {
   color: grey;
 }
+
+.album_artwork {
+  float: left;
+  margin-left: 1%;
+  width: 22.5%;
+}

@@ -3,7 +3,7 @@ require_relative('artist')
 
 class Album
 
-  attr_reader :id, :title, :in_stock, :stock_level, :artist_id
+  attr_reader :id, :title, :in_stock, :stock_level, :artist_id, :genre, :artwork
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -11,14 +11,16 @@ class Album
     @in_stock = options['in_stock'].to_i
     @stock_level = set_stock_level()
     @artist_id = options['artist_id'].to_i
+    @genre = options['genre']
+    @artwork = options['artwork']
   end
 
   # CRUD
 
   def save()
     # save an album to db
-    sql = "INSERT INTO albums (title, in_stock, stock_level, artist_id) VALUES ($1, $2, $3, $4) RETURNING id;"
-    values = [@title, @in_stock, @stock_level, @artist_id]
+    sql = "INSERT INTO albums (title, in_stock, stock_level, artist_id, genre, artwork) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id;"
+    values = [@title, @in_stock, @stock_level, @artist_id, @genre, @artwork]
     results = SqlRunner.run(sql, "save_album", values)
     @id = results[0]['id'].to_i
   end
@@ -41,8 +43,8 @@ class Album
 
   def update()
     # update an album in db
-    sql = "UPDATE albums SET (title, in_stock, stock_level, artist_id) = ($1, $2, $3, $4) WHERE id = $5;"
-    values = [@title, @in_stock, @stock_level, @artist_id, @id]
+    sql = "UPDATE albums SET (title, in_stock, stock_level, artist_id) = ($1, $2, $3, $4, $5, $6) WHERE id = $7;"
+    values = [@title, @in_stock, @stock_level, @artist_id, @genre, @artwork, @id]
     SqlRunner.run(sql, "update_album", values)
   end
 

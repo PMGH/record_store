@@ -1,5 +1,9 @@
 <h2 class="form_heading">Edit Album</h2>
+
+<img class="album_artwork" src="<%= @album.artwork() %>" alt="Album artwork for <%= @album.artist().name() %>: <%= @album.title() %>">
+
 <form class="form" id="edit_album" action="/big_als/albums/<%= @album.id() %>" method="POST">
+
   <label for="artistSelect">Artist*</label>
   <select name="artist_id" required="required" id="artistSelect">
     <option disabled value> -- Select an Artist -- </option>
@@ -8,7 +12,7 @@
     <% selected = @album.artist().name() %>
     <% @artists.each do |artist| %>
     <% if artist.name() != selected %>
-      <option value="<%= artist.id() %>"><%= artist.name() %></option>
+    <option value="<%= artist.id() %>"><%= artist.name() %></option>
     <% end %>
     <% end %>
 
@@ -20,6 +24,35 @@
 
   <label for="inStock">Quantity*</label>
   <input type="number" name="in_stock" id="inStock" value="<%= @album.in_stock() %>" placeholder="e.g. 12">
+
+
+  <label for="genre">Genre</label>
+  <select name="genre" id="genre">
+    <option disabled selected value> -- Select a Genre -- </option>
+    <option selected value="<%= @album.genre() %>"><%= @album.genre() %></option>
+    <option value="Alternative">Alternative</option>
+    <option value="Blues">Blues</option>
+    <option value="Classical">Classical</option>
+    <option value="Country">Country</option>
+    <option value="Dance">Dance</option>
+    <option value="Electronic">Dance</option>
+    <option value="Folk">Folk</option>
+    <option value="Grunge">Grunge</option>
+    <option value="Rap">Rap</option>
+    <option value="Instrumental">Instrumental</option>
+    <option value="Jazz">Jazz</option>
+    <option value="Opera">Opera</option>
+    <option value="Pop">Pop</option>
+    <option value="Soul">Soul</option>
+    <option value="Reggae">Reggae</option>
+    <option value="Rock">Rock</option>
+    <option value="Vocal">Vocal</option>
+    <option value="World">World</option>
+  </select>
+
+  <label for="albumArtwork">Album Artwork</label>
+  <input type="text" min=0 max=1000 name="artwork" id="albumArtwork"
+  value="<%= @album.artwork() %>" placeholder="e.g. /images/albums/binaural.jpg">
 
   <input class="btn btn--submit" type="submit" value="Amend details">
 </form>

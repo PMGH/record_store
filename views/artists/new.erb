@@ -1,5 +1,6 @@
+<h2 class="form_heading">New Artist</h2>
+
 <form class="form" id="new_artist" action="/big_als/artists/new" method="POST">
-  <h2 class="form_heading">New Artist</h2>
 
   <label for="artistName">Artist*</label>
   <input type="text" name="name" required="required" id="artistName" placeholder="e.g. Pearl Jam">
@@ -8,7 +9,7 @@
   <textarea class="artist_bio" name="bio" rows="5" id="artistBio" placeholder="e.g. Pearl Jam is an American rock band formed in Seattle, Washington, in 1990. Since its inception, the band\'s line-up has consisted of Eddie Vedder (lead vocals), Mike McCready (lead guitar), Stone Gossard (rhythm guitar) and Jeff Ament (bass)."></textarea>
 
   <label for="artistImage">Image Source</label>
-  <input type="text" name="image" id="artistImage" placeholder="e.g. /images/pearl_jam.jpg">
+  <input type="text" name="image" id="artistImage" placeholder="e.g. /images/artists/pearl_jam.jpg">
 
   <input class="btn btn--submit" type="submit" value="Create">
 </form>
