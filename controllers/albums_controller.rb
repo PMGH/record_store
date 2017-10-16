@@ -29,12 +29,12 @@ end
 post '/big_als/albums/new' do
   album = Album.new(params)
   album.save()
-  erb( :"albums/create" )
+  redirect to( '/big_als' )
 end
 
 # update album
 post '/big_als/albums/:id' do
   album = Album.new(params)
   album.update()
-  erb( :"albums/update" )
+  redirect to( '/big_als' )
 end

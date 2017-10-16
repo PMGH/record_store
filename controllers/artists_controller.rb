@@ -31,19 +31,19 @@ end
 post '/big_als/artists/new' do
   artist = Artist.new(params)
   artist.save()
-  erb( :"artists/create" )
+  redirect to( '/big_als' )
 end
 
 # update existing artist
 post '/big_als/artists/:id' do
   artist = Artist.new(params)
   artist.update()
-  erb ( :"artists/update" )
+  redirect to( '/big_als' )
 end
 
 # delete existing artist
 post '/big_als/artists/:id/delete' do
   artist = Artist.find(params['id'])
   artist.delete()
-  erb ( :"artists/delete" )
+  redirect to( '/big_als' )
 end
