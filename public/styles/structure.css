@@ -84,7 +84,8 @@ h3 {
 }
 
 .stock_level {
-  margin-right: 2%;
+  flex-basis: 100px;
+  text-align: right;
 }
 
 .album {
