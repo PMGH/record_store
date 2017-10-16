@@ -1,3 +1,4 @@
+<h2 class="form_heading">Edit Artist</h2>
 <form class="form" id="edit_artist" action="/big_als/artists/<%= @artist.id() %>" method="POST">
   <label for="artistName">Artist: </label>
   <input type="text" name="name" id="artistName" value="<%= @artist.name() %>">
