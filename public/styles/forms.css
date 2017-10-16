@@ -6,29 +6,48 @@
   align-items: baseline;
   flex-wrap: wrap;
   padding: 2%;
-  margin: 1% 30%;
-  min-width: 200px;
+  margin: 1% 25%;
+  min-width: 300px;
+}
+
+h2 {
+  width: 100%;
+}
+
+img {
+  border-radius: 4px;
+  flex: 1 1 auto;
+  margin: 10px 0px;
+  width: 100%;
+}
+
+textarea {
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  flex: 1 1 auto;
+  margin-bottom: 10px;
+  width: 100%;
 }
 
 label {
-  margin: 10px;
+  margin: 10px 0px;
+  font-weight: bold;
   flex: 1 1 auto;
-  width: 25%
+  width: 20%
 }
 
 select {
   flex-shrink: 1;
-  width: 67%;
+  width: 75%;
 }
 
-input[type="text"] {
+input {
+  border: 1px solid lightgrey;
+  border-radius: 4px;
   flex-shrink: 1;
-  height: 12px;
-  width: 65%;
 }
 
-input[type="number"] {
-  flex-shrink: 1;
-  height: 12px;
-  width: 65%;
+input[type="text"], input[type="number"] {
+  height: 14px;
+  width: 75%;
 }
