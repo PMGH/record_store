@@ -18,6 +18,11 @@ get '/big_als/albums/new' do
   erb( :"albums/new" )
 end
 
+# show album
+# get '/big_als/album/:id' do
+#   erb( :"albums/show" )
+# end
+
 # get edit album form
 get '/big_als/albums/:id/edit' do
   @artists = Artist.all()
@@ -36,5 +41,11 @@ end
 post '/big_als/albums/:id' do
   album = Album.new(params)
   album.update()
+  redirect to( '/big_als' )
+end
+
+post '/big_als/albums/:id/delete' do
+  album = Album.find(params['id'])
+  album.delete()
   redirect to( '/big_als' )
 end
