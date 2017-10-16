@@ -5,17 +5,35 @@ Album.delete_all()
 Artist.delete_all()
 
 # create and save artist/s
-artist1 = Artist.new({ 'name' => 'Pearl Jam' })
+artist1 = Artist.new({ 'name' => 'Pearl Jam',
+  'bio' => 'Pearl Jam is an American rock band formed in Seattle, Washington, in 1990. Since its inception, the band\'s line-up has consisted of Eddie Vedder (lead vocals), Mike McCready (lead guitar), Stone Gossard (rhythm guitar) and Jeff Ament (bass). The band\'s fifth member is drummer Matt Cameron (also of Soundgarden), who has been with the band since 1998. Boom Gaspar (piano) has also been a session/touring member with the band since 2002.',
+  'image' => '/images/pearl_jam.jpg'
+  })
 
-artist2 = Artist.new({ 'name' => 'Arcane Roots' })
+artist2 = Artist.new({ 'name' => 'Arcane Roots',
+  'bio' => 'Arcane Roots are a three-piece alternative rock band from Kingston Upon Thames, England. Founded by guitarist and vocalist Andrew Groves and former drummer Daryl Atkins, the band is known for their energetic live shows, and incorporating progressive music, math rock and indie rock into a popular song format.',
+  'image' => '/images/arcane_roots.jpg'
+  })
 
-artist3 = Artist.new({ 'name' => 'Pantera' })
+artist3 = Artist.new({ 'name' => 'Pantera',
+  'bio' => 'Pantera was an American heavy metal band from Arlington, Texas. The group was formed in 1981 by the Abbott brothers – drummer Vinnie Paul and guitarist Dimebag Darrell – along with lead vocalist Terry Glaze. Bassist Rex Brown joined the band the following year, replacing Tommy D. Bradford, who was the unofficial original.',
+  'image' => '/images/pantera.jpg'
+  })
 
-artist4 = Artist.new({ 'name' => 'Jimmy Eat World' })
+artist4 = Artist.new({ 'name' => 'Jimmy Eat World',
+  'bio' => 'Jimmy Eat World is an American rock band from Mesa, Arizona, that formed in 1993. The band is composed of vocalist and lead guitarist Jim Adkins, rhythm guitarist and vocalist Tom Linton, bassist Rick Burch and drummer Zach Lind. As of October 2016, Jimmy Eat World have released nine studio albums, the last eight featuring the current lineup.',
+  'image' => '/images/jimmy_eat_world.png'
+  })
 
-artist5 = Artist.new({ 'name' => 'Alice In Chains' })
+artist5 = Artist.new({ 'name' => 'Alice In Chains',
+  'bio' => 'Alice in Chains is an American rock band formed in Seattle, Washington, in 1987 by guitarist/vocalist Jerry Cantrell and drummer Sean Kinney, who then recruited bassist Mike Starr and lead vocalist Layne Staley. Mike Starr was replaced in 1993 by Mike Inez.',
+  'image' => '/images/alice_in_chains.jpg'
+  })
 
-artist6 = Artist.new({ 'name' => 'Sting' })
+artist6 = Artist.new({ 'name' => 'Sting',
+  'bio' => 'Gordon Matthew Thomas Sumner, CBE (born 2 October 1951), better known by his stage name Sting, is an English musician, singer, songwriter and actor. He was the principal songwriter, lead singer, and bassist for the new wave rock band The Police from 1977 to 1986, and also launched a solo career in 1985.',
+  'image' => '/images/sting.jpeg'
+  })
 
 artist1.save()
 artist2.save()

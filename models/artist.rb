@@ -3,19 +3,21 @@ require_relative('album')
 
 class Artist
 
-  attr_reader :id, :name
+  attr_reader :id, :name, :bio, :image
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
+    @bio = options['bio']
+    @image = options['image']
   end
 
   # CRUD
 
   def save()
     # save an artist to db
-    sql = "INSERT INTO artists (name) VALUES ($1) RETURNING id;"
-    values = [@name]
+    sql = "INSERT INTO artists (name, bio, image) VALUES ($1, $2, $3) RETURNING id;"
+    values = [@name, @bio, @image]
     results = SqlRunner.run(sql, "save_artist", values)
     @id = results[0]['id'].to_i
   end
@@ -38,8 +40,8 @@ class Artist
 
   def update()
     # update an artist in db
-    sql = "UPDATE artists SET (name) = ($1) WHERE id = $2;"
-    values = [@name, @id]
+    sql = "UPDATE artists SET (name, bio, image) = ($1, $2, $3) WHERE id = $4;"
+    values = [@name, @bio, @image, @id]
     SqlRunner.run(sql, "update_artist", values)
   end
 
