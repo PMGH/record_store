@@ -27,6 +27,7 @@
       </form>
     </div>
 
+    <% if artist.albums().length() > 0 %>
     <% for album in artist.albums() do %>
     <div class="flex album <%= album.stock_level() %>">
       <h2 class="album_title"><%= album.title() %></h2>
@@ -36,6 +37,9 @@
         <input type="submit" value="Edit" class="btn btn--edit">
       </form>
     </div>
+    <% end %>
+    <% else %>
+    <p class="no_albums_message">No albums to display.</p>
     <% end %>
 
   </section>

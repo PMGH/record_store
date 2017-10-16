@@ -70,7 +70,7 @@ h3 {
   align-items: baseline;
 }
 
-.artist {
+.artist, .no_albums_message {
   padding: 5px;
   margin: 5px;
 }
@@ -106,4 +106,8 @@ h3 {
   display: flex;
   justify-content: center;
   margin: 1% 15%;
+}
+
+.no_albums_message {
+  color: grey;
 }
