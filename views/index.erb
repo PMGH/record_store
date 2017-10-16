@@ -33,7 +33,7 @@
       <h2 class="album_title"><%= album.title() %></h2>
       <h3 class="stock_level"><%= album.stock_level() %></h3>
 
-      <form action="/big_als/albums/<%= album.artist_id() %>/edit" method="GET">
+      <form action="/big_als/albums/<%= album.id() %>/edit" method="GET">
         <input type="submit" value="Edit" class="btn btn--edit">
       </form>
     </div>
