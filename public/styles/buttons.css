@@ -26,6 +26,12 @@
   margin: 10px;
 }
 
+.btn--submit:hover {
+  background-color: green;
+  border: 1px solid green;
+  color: white;
+}
+
 .btn--all_stock, .btn--oos, .btn--low, .btn--high {
   font-weight: bold;
   font-size: 16px;
