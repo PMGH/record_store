@@ -15,8 +15,8 @@
 /* Edit button */
 
 .btn--edit:hover {
-  background-color: darkorange;
-  border: 1px solid darkorange;
+  background-color: grey;
+  border: 1px solid grey;
 }
 
 /* Delete button */
