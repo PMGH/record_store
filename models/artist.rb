@@ -16,7 +16,7 @@ class Artist
 
   def save()
     # check if @image is nil
-    if @image == nil
+    if (@image == nil || @image == '')
       # set @image equal to default
       @image = '/images/no_image_available.jpeg'
     end

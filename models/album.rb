@@ -19,7 +19,7 @@ class Album
 
   def save()
     # check if @artwork is nil
-    if @artwork == nil
+    if (@artwork == nil || @artwork == '')
       # set @artwork equal to default value
       @artwork = '/images/no_image_available.jpeg'
     end
