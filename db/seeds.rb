@@ -35,12 +35,17 @@ artist6 = Artist.new({ 'name' => 'Sting',
   'image' => '/images/artists/sting.jpeg'
   })
 
+artist7 = Artist.new({ 'name' => 'Daft Punk',
+  'bio' => 'Daft Punk are a French electronic music duo formed in 1993 by Guy-Manuel de Homem-Christo and Thomas Bangalter. The duo achieved significant popularity in the late 1990s as part of the French house movement and had continuous success in the years following, combining elements of house music with funk, techno, disco, rock and synthpop influences.'
+  })
+
 artist1.save()
 artist2.save()
 artist3.save()
 artist4.save()
 artist5.save()
 artist6.save()
+artist7.save()
 
 
 # create and save albums
