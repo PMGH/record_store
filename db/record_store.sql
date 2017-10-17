@@ -24,3 +24,24 @@ CREATE TABLE albums(
   genre INT8 REFERENCES genres(id),
   artwork VARCHAR(255)
 );
+
+
+-- populate genres table
+INSERT INTO genres (genre) VALUES ('Alternative');
+INSERT INTO genres (genre) VALUES ('Blues');
+INSERT INTO genres (genre) VALUES ('Classical');
+INSERT INTO genres (genre) VALUES ('Country');
+INSERT INTO genres (genre) VALUES ('Dance');
+INSERT INTO genres (genre) VALUES ('Electronic');
+INSERT INTO genres (genre) VALUES ('Folk');
+INSERT INTO genres (genre) VALUES ('Grunge');
+INSERT INTO genres (genre) VALUES ('Hip-Hop / Rap');
+INSERT INTO genres (genre) VALUES ('Instrumental');
+INSERT INTO genres (genre) VALUES ('Jazz');
+INSERT INTO genres (genre) VALUES ('Opera');
+INSERT INTO genres (genre) VALUES ('Pop');
+INSERT INTO genres (genre) VALUES ('R & B Soul');
+INSERT INTO genres (genre) VALUES ('Reggae');
+INSERT INTO genres (genre) VALUES ('Rock');
+INSERT INTO genres (genre) VALUES ('Vocal');
+INSERT INTO genres (genre) VALUES ('World');
