@@ -51,14 +51,14 @@
   <input type="text" min=0 max=1000 name="artwork" id="albumArtwork"
   value="<%= @album.artwork() %>" placeholder="e.g. /images/albums/binaural.jpg">
 
-  <label for="buyPrice">Buy Price</label>
-  <input type="number" min=0.00 step=0.05 name="buy_price" id="buyPrice" placeholder="e.g. 5.99" value="<%= @album.buy_price() %>">
+  <label for="buyPrice">Buy Price*</label>
+  <input type="number" required="required" min=0.00 step=0.01 name="buy_price" id="buyPrice" placeholder="e.g. 5.99" value="<%= @album.buy_price() %>">
 
-  <label for="sellPrice">Initial Sell Price</label>
-  <input type="number" min=0.00 step=0.05 name="original_sell_price" id="sellPrice" placeholder="e.g. 7.99" value="<%= @album.original_sell_price() %>">
+  <label for="sellPrice">Initial Sell Price*</label>
+  <input type="number" required="required" min=0.00 step=0.01 name="original_sell_price" id="sellPrice" placeholder="e.g. 7.99" value="<%= @album.original_sell_price() %>">
 
   <label for="discount">Discount</label>
-  <input type="number" min=0.00 max=1.00 step=0.05 name="discount" id="discount" placeholder="e.g. 0.5" value="<%= @album.discount() %>">
+  <input type="number" min=0 max=100 name="discount" id="discount" placeholder="e.g. 10" value="<%= @album.discount().to_i %>">
 
   <label for="finalSellPrice">Final Sell Price</label>
   <input type="number" min=0.00 name="final_sell_price" id="finalSellPrice" value="<%= @album.final_sell_price() %>" readonly>
