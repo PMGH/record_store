@@ -50,6 +50,11 @@ class Album
   end
 
   def update()
+    # check if @artwork is nil
+    if (@artwork == nil || @artwork == '')
+      # set @artwork equal to default value
+      @artwork = '/images/no_image_available.jpeg'
+    end
     # update an album in db
     sql = "UPDATE albums SET (title, in_stock, stock_level, artist_id, genre_id, artwork) = ($1, $2, $3, $4, $5, $6) WHERE id = $7;"
     values = [@title, @in_stock, @stock_level, @artist_id, @genre_id, @artwork, @id]

@@ -53,6 +53,11 @@ class Artist
   end
 
   def update()
+    # check if @image is nil
+    if (@image == nil || @image == '')
+      # set @image equal to default
+      @image = '/images/no_image_available.jpeg'
+    end
     # update an artist in db
     sql = "UPDATE artists SET (name, bio, image) = ($1, $2, $3) WHERE id = $4;"
     # values (instance variables)
