@@ -7,13 +7,17 @@
   <label for="artistSelect">Artist*</label>
   <select name="artist_id" required="required" id="artistSelect">
     <option disabled value> -- Select an Artist -- </option>
-    <option selected value="<%= @album.artist().id() %>"><%= @album.artist().name() %></option>
 
     <% selected = @album.artist().name() %>
+
     <% @artists.each do |artist| %>
+
     <% if artist.name() != selected %>
     <option value="<%= artist.id() %>"><%= artist.name() %></option>
+    <% else %>
+    <option selected value="<%= @album.artist().id() %>"><%= @album.artist().name() %></option>
     <% end %>
+
     <% end %>
 
     <option disabled value> -- Add new artist if not available -- </option>
@@ -33,6 +37,7 @@
     <% selected = @album.genre().name() %>
 
     <% @genres.each do |genre| %>
+    
     <% if genre.name() != selected %>
     <option value="<%= genre.id() %>"><%= genre.name() %></option>
     <% else %>
