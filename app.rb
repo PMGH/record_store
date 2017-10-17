@@ -58,3 +58,18 @@ get '/big_als/high_stock' do
   end
   erb( :"high_stock/index" )
 end
+
+# get all discounted albums
+get '/big_als/discounted_stock' do
+  @artists = Artist.all()
+  @discounted_albums = Album.discounted()
+  @discounted_artists = []
+  for album in @discounted_albums
+    if @discounted_albums.include?(album.artist_id())
+      next
+    else
+      @discounted_artists << album.artist_id()
+    end
+  end
+  erb( :"discounted_stock/index" )
+end

@@ -170,4 +170,12 @@ class Album
     @profit = @final_sell_price - @buy_price
   end
 
+  def self.discounted()
+    # get discounted albums from db
+    sql = "SELECT * FROM albums WHERE discount > $1;"
+    values = [0]
+    results = SqlRunner.run(sql, "get_discounted_stock", values)
+    return results.map { |album| Album.new(album) }
+  end
+
 end

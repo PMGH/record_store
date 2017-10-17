@@ -44,7 +44,7 @@
 
 /* Stock buttons */
 
-.btn--all_stock, .btn--oos, .btn--low, .btn--high {
+.btn--all_stock, .btn--oos, .btn--low, .btn--high, .btn--discounted {
   font-weight: bold;
   font-size: 16px;
   padding: 10px;
@@ -80,4 +80,12 @@
 
 .btn--high:hover {
   background-color: #41996E;
+}
+
+.btn--discounted {
+  border: 1px solid grey;
+}
+
+.btn--discounted:hover {
+  background-color: grey;
 }

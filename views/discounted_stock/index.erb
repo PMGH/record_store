@@ -23,7 +23,7 @@
   </div>
 
   <% for artist in @artists do %>
-  <% if @high_artists.include?(artist.id()) %>
+  <% if @discounted_artists.include?(artist.id()) %>
   <section class="artist_albums">
     <div class="flex artist">
       <h1 class="artist_name"><%= artist.name() %></h1>
@@ -34,7 +34,7 @@
     <% end %>
 
     <% for album in artist.albums() do %>
-    <% if album.stock_level() == "High" %>
+    <% if album.discount() > 0 %>
     <img class="album_artwork_index" src="<%= album.artwork() %>" alt="Album artwork for <%= artist.name() %>: <%= album.title() %>">
 
     <div class="flex album <%= album.stock_level() %>">

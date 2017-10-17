@@ -20,7 +20,7 @@ class TestAlbum < MiniTest::Test
 
     @album2 = Album.new({ 'title' => 'Ten', 'in_stock' => 1, 'artist_id' => @artist1.id(), 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
 
-    @album3 = Album.new({ 'title' => 'Ten', 'in_stock' => 3, 'artist_id' => @artist1.id(), 'buy_price' => 5.00, 'original_sell_price' => 8, 'discount_multiplier' => 0.5 })
+    @album3 = Album.new({ 'title' => 'Ten', 'in_stock' => 3, 'artist_id' => @artist1.id(), 'buy_price' => 5.00, 'original_sell_price' => 8, 'discount' => 50 })
 
     @album4 = Album.new({ 'title' => 'Ten', 'in_stock' => 5, 'artist_id' => @artist1.id(), 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
 
@@ -165,17 +165,17 @@ class TestAlbum < MiniTest::Test
   end
 
   def test_discount_multiplier__given()
-    expected = 0.5
+    expected = 50
 
-    actual = @album3.discount_multiplier()
+    actual = @album3.discount()
 
     assert_equal(expected, actual)
   end
 
   def test_discount_multiplier__not_given()
-    expected = 1
+    expected = 0
 
-    actual = @album2.discount_multiplier()
+    actual = @album2.discount()
 
     assert_equal(expected, actual)
   end
@@ -184,6 +184,14 @@ class TestAlbum < MiniTest::Test
     expected = 4
 
     actual = @album3.final_sell_price()
+
+    assert_equal(expected, actual)
+  end
+
+  def test_self_discounted()
+    expected = 1
+
+    actual = Album.discounted().length()
 
     assert_equal(expected, actual)
   end
