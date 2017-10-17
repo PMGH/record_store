@@ -1,9 +1,10 @@
+require('pry-byebug')
 require_relative('../db/sql_runner')
 require_relative('artist')
 
 class Album
 
-  attr_reader :id, :title, :in_stock, :stock_level, :artist_id, :genre_id, :artwork
+  attr_reader :id, :title, :in_stock, :stock_level, :artist_id, :genre_id, :artwork, :buy_price, :original_sell_price, :final_sell_price, :profit, :discount
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -11,22 +12,31 @@ class Album
     @in_stock = options['in_stock'].to_i
     @stock_level = set_stock_level()
     @artist_id = options['artist_id'].to_i
-    @genre_id = options['genre_id']
+    @genre_id = options['genre_id'].to_i
     @artwork = options['artwork']
+    @buy_price = options['buy_price'].to_f
+    @original_sell_price = options['original_sell_price'].to_f
+    @discount = options['discount'].to_f
+    @final_sell_price = final_sell_price()
+    @profit = profit().to_f
   end
 
   # CRUD
 
   def save()
-    # check if @artwork is nil
+    # check if @artwork is nil/empty string
     if (@artwork == nil || @artwork == '')
       # set @artwork equal to default value
       @artwork = '/images/no_image_available.jpeg'
     end
+    # check if discount is nil/empty string
+    if (@discount == nil || @discount == '')
+      @discount = 1
+    end
     # values (instance variables)
-    values = [@title, @in_stock, @stock_level, @artist_id, @genre_id, @artwork]
+    values = [@title, @in_stock, @stock_level, @artist_id, @genre_id, @artwork, @buy_price, @original_sell_price, @discount]
     # save an album to db
-    sql = "INSERT INTO albums (title, in_stock, stock_level, artist_id, genre_id, artwork) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id;"
+    sql = "INSERT INTO albums (title, in_stock, stock_level, artist_id, genre_id, artwork, buy_price, original_sell_price, discount) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id;"
     # run sql and return id
     results = SqlRunner.run(sql, "save_album", values)
     # set @id equal to the returned id
@@ -55,9 +65,14 @@ class Album
       # set @artwork equal to default value
       @artwork = '/images/no_image_available.jpeg'
     end
+    # check if discount is nil/empty string
+    if (@discount == nil || @discount == '')
+      # set @discount equal to default value
+      @discount = 1.00
+    end
     # update an album in db
-    sql = "UPDATE albums SET (title, in_stock, stock_level, artist_id, genre_id, artwork) = ($1, $2, $3, $4, $5, $6) WHERE id = $7;"
-    values = [@title, @in_stock, @stock_level, @artist_id, @genre_id, @artwork, @id]
+    sql = "UPDATE albums SET (title, in_stock, stock_level, artist_id, genre_id, artwork, buy_price, original_sell_price, discount) = ($1, $2, $3, $4, $5, $6, $7, $8, $9) WHERE id = $10;"
+    values = [@title, @in_stock, @stock_level, @artist_id, @genre_id, @artwork, @buy_price, @original_sell_price, @discount, @id]
     SqlRunner.run(sql, "update_album", values)
   end
 
@@ -130,6 +145,19 @@ class Album
     values = [@genre_id]
     genre = SqlRunner.run(sql, "get_genre", values).first()
     return Genre.new(genre)
+  end
+
+  def final_sell_price()
+    # convert discount to multiplier
+    if (@discount == nil || @discount == '')
+      @discount = 1.00
+    end
+    discount_multiplier = ((100 - @discount) / 100.00)
+    @final_sell_price = (@original_sell_price * discount_multiplier).round(2)
+  end
+
+  def profit()
+    @profit = @final_sell_price - @buy_price
   end
 
 end

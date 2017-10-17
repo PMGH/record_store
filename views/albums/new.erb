@@ -28,5 +28,14 @@
   <label for="albumArtwork">Album Artwork</label>
   <input type="text" min=0 max=1000 name="artwork" id="albumArtwork" placeholder="e.g. /images/albums/binaural.jpg">
 
+  <label for="buyPrice">Buy Price (per item)</label>
+  <input type="number" min=0.00 step=0.05 name="buy_price" id="buyPrice" placeholder="e.g. 5.99">
+
+  <label for="sellPrice">Sell Price (per item)</label>
+  <input type="number" min=0.00 step=0.05 name="original_sell_price" id="sellPrice" placeholder="e.g. 7.99">
+
+  <label for="discount">Discount</label>
+  <input type="number" min=0.00 max=100 step=0.05 name="discount" id="discount" placeholder="e.g. 0.5">
+
   <input class="btn btn--submit" type="submit" value="Create">
 </form>

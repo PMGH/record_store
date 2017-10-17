@@ -22,7 +22,12 @@ CREATE TABLE albums(
   stock_level VARCHAR(20),
   artist_id INT8 REFERENCES artists(id) ON DELETE CASCADE,
   genre_id INT8 REFERENCES genres(id),
-  artwork VARCHAR(255)
+  artwork VARCHAR(255),
+  buy_price FLOAT8 NOT NULL,
+  original_sell_price FLOAT8 NOT NULL,
+  discount FLOAT8,
+  final_sell_price FLOAT8,
+  profit FLOAT8
 );
 
 
