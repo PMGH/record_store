@@ -31,6 +31,8 @@
 
     <% for album in artist.albums() do %>
     <% if album.stock_level() == "Low" %>
+    <img class="album_artwork_index" src="<%= album.artwork() %>" alt="Album artwork for <%= artist.name() %>: <%= album.title() %>">
+    
     <div class="flex album <%= album.stock_level() %>">
       <h2 class="album_title"><%= album.title() %></h2>
       <h3 class="stock_level"><%= album.stock_level() %></h3>
