@@ -49,39 +49,39 @@ artist7.save()
 
 
 # create and save albums
-album1 = Album.new({ 'title' => 'Ten', 'in_stock' => 0, 'artist_id' => artist1.id(), 'genre_id' => 16, 'artwork' => "/images/albums/ten.jpg", 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
+album1 = Album.new({ 'title' => 'Ten', 'in_stock' => 0, 'artist_id' => artist1.id(), 'genre_id' => 17, 'artwork' => "/images/albums/ten.jpg", 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
 
-album2 = Album.new({ 'title' => 'Vs.', 'in_stock' => 1, 'artist_id' => artist1.id(), 'genre_id' => 16, 'artwork' => '/images/albums/vs.jpg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
+album2 = Album.new({ 'title' => 'Vs.', 'in_stock' => 1, 'artist_id' => artist1.id(), 'genre_id' => 17, 'artwork' => '/images/albums/vs.jpg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
 
-album3 = Album.new({ 'title' => 'Vitalogy', 'in_stock' => 3, 'artist_id' => artist1.id(), 'genre_id' => 16, 'artwork' => '/images/albums/vitalogy.jpg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
+album3 = Album.new({ 'title' => 'Vitalogy', 'in_stock' => 3, 'artist_id' => artist1.id(), 'genre_id' => 17, 'artwork' => '/images/albums/vitalogy.jpg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
 
-album4 = Album.new({ 'title' => 'No Code', 'in_stock' => 5, 'artist_id' => artist1.id(), 'genre_id' => 16, 'artwork' => '/images/albums/no_code.jpg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
+album4 = Album.new({ 'title' => 'No Code', 'in_stock' => 5, 'artist_id' => artist1.id(), 'genre_id' => 17, 'artwork' => '/images/albums/no_code.jpg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
 
-album5 = Album.new({ 'title' => 'Yield', 'in_stock' => 6, 'artist_id' => artist1.id(), 'genre_id' => 16, 'artwork' => '/images/albums/yield.jpg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
+album5 = Album.new({ 'title' => 'Yield', 'in_stock' => 6, 'artist_id' => artist1.id(), 'genre_id' => 17, 'artwork' => '/images/albums/yield.jpg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
 
-album6 = Album.new({ 'title' => 'Binaural', 'in_stock' => 10, 'artist_id' => artist1.id(), 'genre_id' => 16, 'artwork' => '/images/albums/binaural.jpg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
+album6 = Album.new({ 'title' => 'Binaural', 'in_stock' => 10, 'artist_id' => artist1.id(), 'genre_id' => 17, 'artwork' => '/images/albums/binaural.jpg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
 
-album7 = Album.new({ 'title' => 'Riot Act', 'in_stock' => 15, 'artist_id' => artist1.id(), 'genre_id' => 16, 'artwork' => '/images/albums/riot_act.jpg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
+album7 = Album.new({ 'title' => 'Riot Act', 'in_stock' => 15, 'artist_id' => artist1.id(), 'genre_id' => 17, 'artwork' => '/images/albums/riot_act.jpg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
 
-album8 = Album.new({ 'title' => 'Pearl Jam', 'in_stock' => 16, 'artist_id' => artist1.id(), 'genre_id' => 16, 'artwork' => '/images/albums/pearl_jam.jpeg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
+album8 = Album.new({ 'title' => 'Pearl Jam', 'in_stock' => 16, 'artist_id' => artist1.id(), 'genre_id' => 17, 'artwork' => '/images/albums/pearl_jam.jpeg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
 
-album9 = Album.new({ 'title' => 'Backspacer', 'in_stock' => 5, 'artist_id' => artist1.id(), 'genre_id' => 16, 'artwork' => '/images/albums/backspacer.jpg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
+album9 = Album.new({ 'title' => 'Backspacer', 'in_stock' => 5, 'artist_id' => artist1.id(), 'genre_id' => 17, 'artwork' => '/images/albums/backspacer.jpg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
 
-album10 = Album.new({ 'title' => 'Lightning Bolt', 'in_stock' => 0, 'artist_id' => artist1.id(), 'genre_id' => 16, 'artwork' => '/images/albums/lightning_bolt.jpg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
+album10 = Album.new({ 'title' => 'Lightning Bolt', 'in_stock' => 0, 'artist_id' => artist1.id(), 'genre_id' => 17, 'artwork' => '/images/albums/lightning_bolt.jpg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
 
-album11 = Album.new({ 'title' => 'Blood and Chemistry', 'in_stock' => 2, 'artist_id' => artist2.id(), 'genre_id' => 16, 'artwork' => '/images/albums/blood_and_chemistry.jpeg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
+album11 = Album.new({ 'title' => 'Blood and Chemistry', 'in_stock' => 2, 'artist_id' => artist2.id(), 'genre_id' => 17, 'artwork' => '/images/albums/blood_and_chemistry.jpeg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
 
-album12 = Album.new({ 'title' => 'Melancholia Hymns', 'in_stock' => 10, 'artist_id' => artist2.id(), 'genre_id' => 16, 'artwork' => '/images/albums/melancholia_hymns.jpg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
+album12 = Album.new({ 'title' => 'Melancholia Hymns', 'in_stock' => 10, 'artist_id' => artist2.id(), 'genre_id' => 17, 'artwork' => '/images/albums/melancholia_hymns.jpg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
 
-album13 = Album.new({ 'title' => 'Cowboys From Hell', 'in_stock' => 0, 'artist_id' => artist3.id(), 'genre_id' => 16, 'artwork' => '/images/albums/cowboys_from_hell.jpg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
+album13 = Album.new({ 'title' => 'Cowboys From Hell', 'in_stock' => 0, 'artist_id' => artist3.id(), 'genre_id' => 17, 'artwork' => '/images/albums/cowboys_from_hell.jpg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
 
-album14 = Album.new({ 'title' => 'Unplugged', 'in_stock' => 20, 'artist_id' => artist5.id(), 'genre_id' => 8, 'artwork' => '/images/albums/unplugged.jpeg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
+album14 = Album.new({ 'title' => 'Unplugged', 'in_stock' => 20, 'artist_id' => artist5.id(), 'genre_id' => 9, 'artwork' => '/images/albums/unplugged.jpeg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
 
-album15 = Album.new({ 'title' => 'Left Fire', 'in_stock' => 8, 'artist_id' => artist2.id(), 'genre_id' => 16, 'artwork' => '/images/albums/left_fire.jpg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
+album15 = Album.new({ 'title' => 'Left Fire', 'in_stock' => 8, 'artist_id' => artist2.id(), 'genre_id' => 17, 'artwork' => '/images/albums/left_fire.jpg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
 
-album16 = Album.new({ 'title' => '57TH & 9TH', 'in_stock' => 10, 'artist_id' => artist6.id(), 'genre_id' => 16, 'artwork' => '/images/albums/57th_and_9th.jpg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
+album16 = Album.new({ 'title' => '57TH & 9TH', 'in_stock' => 10, 'artist_id' => artist6.id(), 'genre_id' => 17, 'artwork' => '/images/albums/57th_and_9th.jpg', 'buy_price' => 5.00, 'original_sell_price' => 7.99 })
 
-album17 = Album.new({ 'title' => 'The Last Ship', 'in_stock' => 4, 'artist_id' => artist6.id(), 'genre_id' => 16, 'buy_price' => 5.00, 'original_sell_price' => 7.99, 'discount' => 20 })
+album17 = Album.new({ 'title' => 'The Last Ship', 'in_stock' => 4, 'artist_id' => artist6.id(), 'genre_id' => 17, 'buy_price' => 5.00, 'original_sell_price' => 7.99, 'discount' => 20 })
 
 album1.save()
 album2.save()

@@ -32,6 +32,7 @@ CREATE TABLE albums(
 
 
 -- populate genres table
+INSERT INTO genres (name) VALUES ('Unknown');
 INSERT INTO genres (name) VALUES ('Alternative');
 INSERT INTO genres (name) VALUES ('Blues');
 INSERT INTO genres (name) VALUES ('Classical');

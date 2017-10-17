@@ -31,7 +31,12 @@ class Album
     end
     # check if discount is nil/empty string
     if (@discount == nil || @discount == '')
-      @discount = 1
+      @discount = 0.00
+    end
+    # check if genre_id is nil/empty string
+    if (@genre_id == 0 || @genre_id == nil || @genre_id == '')
+      # set @genre_id equal to default value
+      @genre_id = 1
     end
     # values (instance variables)
     values = [@title, @in_stock, @stock_level, @artist_id, @genre_id, @artwork, @buy_price, @original_sell_price, @discount]
@@ -68,7 +73,12 @@ class Album
     # check if discount is nil/empty string
     if (@discount == nil || @discount == '')
       # set @discount equal to default value
-      @discount = 1.00
+      @discount = 0.00
+    end
+    # check if genre_id is nil/empty string
+    if (@genre_id == 0 || @genre_id == nil || @genre_id == '')
+      # set @genre_id equal to default value
+      @genre_id = 1
     end
     # update an album in db
     sql = "UPDATE albums SET (title, in_stock, stock_level, artist_id, genre_id, artwork, buy_price, original_sell_price, discount) = ($1, $2, $3, $4, $5, $6, $7, $8, $9) WHERE id = $10;"
@@ -150,9 +160,9 @@ class Album
   def final_sell_price()
     # convert discount to multiplier
     if (@discount == nil || @discount == '')
-      @discount = 1.00
+      @discount = 0.00
     end
-    discount_multiplier = ((100 - @discount) / 100.00)
+    discount_multiplier = ((100.00 - @discount) / 100.00)
     @final_sell_price = (@original_sell_price * discount_multiplier).round(2)
   end
 
