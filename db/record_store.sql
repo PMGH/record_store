@@ -16,5 +16,5 @@ CREATE TABLE albums(
   stock_level VARCHAR(20),
   artist_id INT8 REFERENCES artists(id) ON DELETE CASCADE,
   genre VARCHAR(255),
-  artwork TEXT
+  artwork VARCHAR(255)
 );

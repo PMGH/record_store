@@ -18,10 +18,22 @@ class Album
   # CRUD
 
   def save()
+    # check if @artwork is nil
+    if @artwork == nil
+      # give default value
+      @artwork = '/images/no_image_available.jpeg'
+    end
+
+    # values
+    values = [@title, @in_stock, @stock_level, @artist_id, @genre, @artwork]
+
     # save an album to db
     sql = "INSERT INTO albums (title, in_stock, stock_level, artist_id, genre, artwork) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id;"
-    values = [@title, @in_stock, @stock_level, @artist_id, @genre, @artwork]
+
+    # run sql and return the id of new record from the db
     results = SqlRunner.run(sql, "save_album", values)
+
+    # set the id
     @id = results[0]['id'].to_i
   end
 

@@ -76,6 +76,8 @@ album15 = Album.new({ 'title' => 'Left Fire', 'in_stock' => 8, 'artist_id' => ar
 
 album16 = Album.new({ 'title' => '57TH & 9TH', 'in_stock' => 10, 'artist_id' => artist6.id(), 'genre' => 'Rock', 'artwork' => '/images/albums/57th_and_9th.jpg' })
 
+album17 = Album.new({ 'title' => 'The Last Ship', 'in_stock' => 4, 'artist_id' => artist6.id(), 'genre' => 'Rock' })
+
 album1.save()
 album2.save()
 album3.save()
@@ -92,6 +94,7 @@ album13.save()
 album14.save()
 album15.save()
 album16.save()
+album17.save()
 
 binding.pry
 nil
