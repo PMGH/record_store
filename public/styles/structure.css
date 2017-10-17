@@ -123,3 +123,11 @@ h3 {
   margin-left: 1%;
   width: 22.5%;
 }
+
+.album_artwork_index {
+  float: left;
+  /* flex = flex-grow, flex-shrink and flex-basis */
+  flex: 0 0 auto;
+  margin: 0;
+  width: 42px;
+}
