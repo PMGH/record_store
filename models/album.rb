@@ -3,7 +3,7 @@ require_relative('artist')
 
 class Album
 
-  attr_reader :id, :title, :in_stock, :stock_level, :artist_id, :genre, :artwork
+  attr_reader :id, :title, :in_stock, :stock_level, :artist_id, :genre_id, :artwork
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -11,7 +11,7 @@ class Album
     @in_stock = options['in_stock'].to_i
     @stock_level = set_stock_level()
     @artist_id = options['artist_id'].to_i
-    @genre = options['genre']
+    @genre_id = options['genre_id']
     @artwork = options['artwork']
   end
 
@@ -24,9 +24,9 @@ class Album
       @artwork = '/images/no_image_available.jpeg'
     end
     # values (instance variables)
-    values = [@title, @in_stock, @stock_level, @artist_id, @genre, @artwork]
+    values = [@title, @in_stock, @stock_level, @artist_id, @genre_id, @artwork]
     # save an album to db
-    sql = "INSERT INTO albums (title, in_stock, stock_level, artist_id, genre, artwork) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id;"
+    sql = "INSERT INTO albums (title, in_stock, stock_level, artist_id, genre_id, artwork) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id;"
     # run sql and return id
     results = SqlRunner.run(sql, "save_album", values)
     # set @id equal to the returned id
@@ -51,8 +51,8 @@ class Album
 
   def update()
     # update an album in db
-    sql = "UPDATE albums SET (title, in_stock, stock_level, artist_id, genre, artwork) = ($1, $2, $3, $4, $5, $6) WHERE id = $7;"
-    values = [@title, @in_stock, @stock_level, @artist_id, @genre, @artwork, @id]
+    sql = "UPDATE albums SET (title, in_stock, stock_level, artist_id, genre_id, artwork) = ($1, $2, $3, $4, $5, $6) WHERE id = $7;"
+    values = [@title, @in_stock, @stock_level, @artist_id, @genre_id, @artwork, @id]
     SqlRunner.run(sql, "update_album", values)
   end
 
@@ -117,6 +117,14 @@ class Album
     values = ["High"]
     results = SqlRunner.run(sql, "get_high_stock", values)
     return results.map { |album| Album.new(album) }
+  end
+
+  def genre()
+    # get the album genre
+    sql = "SELECT * FROM genres WHERE id = $1;"
+    values = [@genre_id]
+    genre = SqlRunner.run(sql, "get_genre", values).first()
+    return Genre.new(genre)
   end
 
 end

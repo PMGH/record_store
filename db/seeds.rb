@@ -49,39 +49,39 @@ artist7.save()
 
 
 # create and save albums
-album1 = Album.new({ 'title' => 'Ten', 'in_stock' => 0, 'artist_id' => artist1.id(), 'genre' => 'Rock', 'artwork' => "/images/albums/ten.jpg" })
+album1 = Album.new({ 'title' => 'Ten', 'in_stock' => 0, 'artist_id' => artist1.id(), 'genre_id' => 16, 'artwork' => "/images/albums/ten.jpg" })
 
-album2 = Album.new({ 'title' => 'Vs.', 'in_stock' => 1, 'artist_id' => artist1.id(), 'genre' => 'Rock', 'artwork' => '/images/albums/vs.jpg' })
+album2 = Album.new({ 'title' => 'Vs.', 'in_stock' => 1, 'artist_id' => artist1.id(), 'genre_id' => 16, 'artwork' => '/images/albums/vs.jpg' })
 
-album3 = Album.new({ 'title' => 'Vitalogy', 'in_stock' => 3, 'artist_id' => artist1.id(), 'genre' => 'Rock', 'artwork' => '/images/albums/vitalogy.jpg' })
+album3 = Album.new({ 'title' => 'Vitalogy', 'in_stock' => 3, 'artist_id' => artist1.id(), 'genre_id' => 16, 'artwork' => '/images/albums/vitalogy.jpg' })
 
-album4 = Album.new({ 'title' => 'No Code', 'in_stock' => 5, 'artist_id' => artist1.id(), 'genre' => 'Rock', 'artwork' => '/images/albums/no_code.jpg' })
+album4 = Album.new({ 'title' => 'No Code', 'in_stock' => 5, 'artist_id' => artist1.id(), 'genre_id' => 16, 'artwork' => '/images/albums/no_code.jpg' })
 
-album5 = Album.new({ 'title' => 'Yield', 'in_stock' => 6, 'artist_id' => artist1.id(), 'genre' => 'Rock', 'artwork' => '/images/albums/yield.jpg' })
+album5 = Album.new({ 'title' => 'Yield', 'in_stock' => 6, 'artist_id' => artist1.id(), 'genre_id' => 16, 'artwork' => '/images/albums/yield.jpg' })
 
-album6 = Album.new({ 'title' => 'Binaural', 'in_stock' => 10, 'artist_id' => artist1.id(), 'genre' => 'Rock', 'artwork' => '/images/albums/binaural.jpg' })
+album6 = Album.new({ 'title' => 'Binaural', 'in_stock' => 10, 'artist_id' => artist1.id(), 'genre_id' => 16, 'artwork' => '/images/albums/binaural.jpg' })
 
-album7 = Album.new({ 'title' => 'Riot Act', 'in_stock' => 15, 'artist_id' => artist1.id(), 'genre' => 'Rock', 'artwork' => '/images/albums/riot_act.jpg' })
+album7 = Album.new({ 'title' => 'Riot Act', 'in_stock' => 15, 'artist_id' => artist1.id(), 'genre_id' => 16, 'artwork' => '/images/albums/riot_act.jpg' })
 
-album8 = Album.new({ 'title' => 'Pearl Jam', 'in_stock' => 16, 'artist_id' => artist1.id(), 'genre' => 'Rock', 'artwork' => '/images/albums/pearl_jam.jpeg' })
+album8 = Album.new({ 'title' => 'Pearl Jam', 'in_stock' => 16, 'artist_id' => artist1.id(), 'genre_id' => 16, 'artwork' => '/images/albums/pearl_jam.jpeg' })
 
-album9 = Album.new({ 'title' => 'Backspacer', 'in_stock' => 5, 'artist_id' => artist1.id(), 'genre' => 'Rock', 'artwork' => '/images/albums/backspacer.jpg' })
+album9 = Album.new({ 'title' => 'Backspacer', 'in_stock' => 5, 'artist_id' => artist1.id(), 'genre_id' => 16, 'artwork' => '/images/albums/backspacer.jpg' })
 
-album10 = Album.new({ 'title' => 'Lightning Bolt', 'in_stock' => 0, 'artist_id' => artist1.id(), 'genre' => 'Rock', 'artwork' => '/images/albums/lightning_bolt.jpg' })
+album10 = Album.new({ 'title' => 'Lightning Bolt', 'in_stock' => 0, 'artist_id' => artist1.id(), 'genre_id' => 16, 'artwork' => '/images/albums/lightning_bolt.jpg' })
 
-album11 = Album.new({ 'title' => 'Blood and Chemistry', 'in_stock' => 2, 'artist_id' => artist2.id(), 'genre' => 'Rock', 'artwork' => '/images/albums/blood_and_chemistry.jpeg' })
+album11 = Album.new({ 'title' => 'Blood and Chemistry', 'in_stock' => 2, 'artist_id' => artist2.id(), 'genre_id' => 16, 'artwork' => '/images/albums/blood_and_chemistry.jpeg' })
 
-album12 = Album.new({ 'title' => 'Melancholia Hymns', 'in_stock' => 10, 'artist_id' => artist2.id(), 'genre' => 'Rock', 'artwork' => '/images/albums/melancholia_hymns.jpg' })
+album12 = Album.new({ 'title' => 'Melancholia Hymns', 'in_stock' => 10, 'artist_id' => artist2.id(), 'genre_id' => 16, 'artwork' => '/images/albums/melancholia_hymns.jpg' })
 
-album13 = Album.new({ 'title' => 'Cowboys From Hell', 'in_stock' => 0, 'artist_id' => artist3.id(), 'genre' => 'Rock', 'artwork' => '/images/albums/cowboys_from_hell.jpg' })
+album13 = Album.new({ 'title' => 'Cowboys From Hell', 'in_stock' => 0, 'artist_id' => artist3.id(), 'genre_id' => 16, 'artwork' => '/images/albums/cowboys_from_hell.jpg' })
 
-album14 = Album.new({ 'title' => 'Unplugged', 'in_stock' => 20, 'artist_id' => artist5.id(), 'genre' => 'Grunge', 'artwork' => '/images/albums/unplugged.jpeg' })
+album14 = Album.new({ 'title' => 'Unplugged', 'in_stock' => 20, 'artist_id' => artist5.id(), 'genre_id' => 8, 'artwork' => '/images/albums/unplugged.jpeg' })
 
-album15 = Album.new({ 'title' => 'Left Fire', 'in_stock' => 8, 'artist_id' => artist2.id(), 'genre' => 'Rock', 'artwork' => '/images/albums/left_fire.jpg' })
+album15 = Album.new({ 'title' => 'Left Fire', 'in_stock' => 8, 'artist_id' => artist2.id(), 'genre_id' => 16, 'artwork' => '/images/albums/left_fire.jpg' })
 
-album16 = Album.new({ 'title' => '57TH & 9TH', 'in_stock' => 10, 'artist_id' => artist6.id(), 'genre' => 'Rock', 'artwork' => '/images/albums/57th_and_9th.jpg' })
+album16 = Album.new({ 'title' => '57TH & 9TH', 'in_stock' => 10, 'artist_id' => artist6.id(), 'genre_id' => 16, 'artwork' => '/images/albums/57th_and_9th.jpg' })
 
-album17 = Album.new({ 'title' => 'The Last Ship', 'in_stock' => 4, 'artist_id' => artist6.id(), 'genre' => 'Rock' })
+album17 = Album.new({ 'title' => 'The Last Ship', 'in_stock' => 4, 'artist_id' => artist6.id(), 'genre_id' => 16 })
 
 album1.save()
 album2.save()

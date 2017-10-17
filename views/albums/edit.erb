@@ -27,27 +27,19 @@
 
 
   <label for="genre">Genre</label>
-  <select name="genre" id="genre">
+  <select name="genre_id" id="genre">
     <option disabled selected value> -- Select a Genre -- </option>
-    <option selected value="<%= @album.genre() %>"><%= @album.genre() %></option>
-    <option value="Alternative">Alternative</option>
-    <option value="Blues">Blues</option>
-    <option value="Classical">Classical</option>
-    <option value="Country">Country</option>
-    <option value="Dance">Dance</option>
-    <option value="Electronic">Electronic</option>
-    <option value="Folk">Folk</option>
-    <option value="Grunge">Grunge</option>
-    <option value="Rap">Rap</option>
-    <option value="Instrumental">Instrumental</option>
-    <option value="Jazz">Jazz</option>
-    <option value="Opera">Opera</option>
-    <option value="Pop">Pop</option>
-    <option value="Soul">Soul</option>
-    <option value="Reggae">Reggae</option>
-    <option value="Rock">Rock</option>
-    <option value="Vocal">Vocal</option>
-    <option value="World">World</option>
+
+    <% selected = @album.genre().name() %>
+
+    <% @genres.each do |genre| %>
+    <% if genre.name() != selected %>
+    <option value="<%= genre.id() %>"><%= genre.name() %></option>
+    <% else %>
+    <option selected value="<%= genre.id() %>"><%= genre.name() %></option>
+    <% end %>
+
+    <% end %>
   </select>
 
   <label for="albumArtwork">Album Artwork</label>
