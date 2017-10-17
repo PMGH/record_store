@@ -2,6 +2,7 @@ require('minitest/autorun')
 require('minitest/rg')
 
 require_relative('../models/album')
+require_relative('../models/artist')
 require_relative('../db/sql_runner')
 
 class TestAlbum < MiniTest::Test
@@ -15,7 +16,7 @@ class TestAlbum < MiniTest::Test
     @artist1.save()
 
     # create and save albums
-    @album1 = Album.new({ 'title' => 'Ten', 'in_stock' => 0, 'artist_id' => @artist1.id() })
+    @album1 = Album.new({ 'title' => 'Ten', 'in_stock' => 0, 'artist_id' => @artist1.id(), 'genre_id' => 16, 'artwork' => "/images/albums/ten.jpg" })
     @album2 = Album.new({ 'title' => 'Ten', 'in_stock' => 1, 'artist_id' => @artist1.id() })
     @album3 = Album.new({ 'title' => 'Ten', 'in_stock' => 3, 'artist_id' => @artist1.id() })
     @album4 = Album.new({ 'title' => 'Ten', 'in_stock' => 5, 'artist_id' => @artist1.id() })
@@ -76,6 +77,7 @@ class TestAlbum < MiniTest::Test
   end
 
   def test_set_stock_level__low_stock()
+    # arrange
     expected = "Low"
 
     # check lower extreme
@@ -92,6 +94,7 @@ class TestAlbum < MiniTest::Test
   end
 
   def test_set_stock_level__medium_stock()
+    # arrange
     expected = "Medium"
 
     # check lower extreme
@@ -108,6 +111,7 @@ class TestAlbum < MiniTest::Test
   end
 
   def test_set_stock_level__high_stock()
+    # arrange
     expected = "High"
 
     # check lower extreme
@@ -116,6 +120,22 @@ class TestAlbum < MiniTest::Test
 
     # check other value in high range
     actual = @album9.stock_level()
+    assert_equal(expected, actual)
+  end
+
+  def test_genre_id()
+    expected = 16
+
+    actual = @album1.genre_id()
+
+    assert_equal(expected, actual)
+  end
+
+  def test_artwork()
+    expected = "/images/albums/ten.jpg"
+
+    actual = @album1.artwork()
+
     assert_equal(expected, actual)
   end
 
