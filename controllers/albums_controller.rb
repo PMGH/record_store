@@ -44,7 +44,7 @@ end
 post '/big_als/albums/:id' do
   album = Album.new(params)
   album.update()
-  redirect to( '/big_als' )
+  redirect to( "/big_als/albums/#{params[:id]}/edit" )
 end
 
 post '/big_als/albums/:id/delete' do
