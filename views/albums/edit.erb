@@ -63,6 +63,9 @@
   <label for="finalSellPrice">Final Sell Price</label>
   <input type="number" min=0.00 name="final_sell_price" id="finalSellPrice" value="<%= @album.final_sell_price() %>" readonly>
 
+  <label for="profitMargin">Profit Margin</label>
+  <input type="number" min=0.00 name="profit" id="profitMargin" value="<%= @album.profit() %>" readonly>
+
   <input class="btn btn--submit" type="submit" value="Amend details">
 </form>
 

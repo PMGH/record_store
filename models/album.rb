@@ -170,7 +170,7 @@ class Album
 
   def profit()
     # set profit margin
-    @profit = @final_sell_price - @buy_price
+    @profit = (@final_sell_price - @buy_price).round(2)
   end
 
   def self.discounted()
