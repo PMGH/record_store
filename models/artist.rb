@@ -53,7 +53,7 @@ class Artist
   end
 
   def update()
-    # check if @image is nil/empty string or doesn't exist
+    # check if @image is nil/empty string or doesn't exist 
     if (@image == nil || @image == '' || File.exist?("public#{@image}") == false)
       # set @image equal to default
       @image = '/images/no_image_available.jpeg'
