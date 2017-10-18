@@ -7,7 +7,7 @@
   margin-left: 20px;
 }
 
-.btn:hover {
+.btn:hover, #btn--all_stock_active, #btn--out_of_stock_active, #btn--high_stock_active, #btn--low_stock_active, #btn--high_stock_active, #btn--discounted_stock_active {
   color: white;
   cursor: pointer;
 }
@@ -54,7 +54,7 @@
   border: 1px solid #18314F;
 }
 
-.btn--all_stock:hover {
+.btn--all_stock:hover, #btn--all_stock_active {
   background-color: #18314F;
 }
 
@@ -62,7 +62,7 @@
   border: 1px solid #D9543C;
 }
 
-.btn--oos:hover {
+.btn--oos:hover, #btn--out_of_stock_active {
   background-color: #D9543C;
 }
 
@@ -70,7 +70,7 @@
   border: 1px solid #FFA500;
 }
 
-.btn--low:hover {
+.btn--low:hover, #btn--low_stock_active {
   background-color: #FFA500;
 }
 
@@ -78,7 +78,7 @@
   border: 1px solid #41996E;
 }
 
-.btn--high:hover {
+.btn--high:hover, #btn--high_stock_active {
   background-color: #41996E;
 }
 
@@ -86,6 +86,6 @@
   border: 1px solid grey;
 }
 
-.btn--discounted:hover {
+.btn--discounted:hover, #btn--discounted_stock_active {
   background-color: grey;
 }
