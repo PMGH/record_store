@@ -40,6 +40,24 @@ input {
   flex-shrink: 1;
 }
 
+#pricing {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+  border: 1px solid lightgrey;
+  padding: 10px;
+  margin: 15px 0;
+}
+
+#buyPrice, #finalSellPrice {
+  margin-right: 10%;
+}
+
+#buyPrice, #originalSellPrice, #profitMargin, #finalSellPrice {
+  width: 20%;
+}
+
 input[type="text"], input[type="number"] {
   height: 14px;
   width: 75%;
