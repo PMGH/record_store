@@ -24,8 +24,8 @@ class Album
   # CRUD
 
   def save()
-    # check if @artwork is nil/empty string
-    if (@artwork == nil || @artwork == '')
+    # check if @artwork is nil/empty string or doesn't exist
+    if (@artwork == nil || @artwork == '' || File.exist?("public#{@artwork}") == false)
       # set @artwork equal to default value
       @artwork = '/images/no_image_available.jpeg'
     end
@@ -65,8 +65,8 @@ class Album
   end
 
   def update()
-    # check if @artwork is nil
-    if (@artwork == nil || @artwork == '')
+    # check if @artwork is nil/empty string or doesn't exist
+    if (@artwork == nil || @artwork == '' || File.exist?("public#{@artwork}") == false)
       # set @artwork equal to default value
       @artwork = '/images/no_image_available.jpeg'
     end
@@ -162,11 +162,14 @@ class Album
     if (@discount == nil || @discount == '')
       @discount = 0.00
     end
+    # set discount_multiplier (e.g. 0.90 = 10% off)
     discount_multiplier = ((100.00 - @discount) / 100.00)
+    # set final_sell_price
     @final_sell_price = (@original_sell_price * discount_multiplier).round(2)
   end
 
   def profit()
+    # set profit margin
     @profit = @final_sell_price - @buy_price
   end
 
