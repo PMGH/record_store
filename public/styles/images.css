@@ -1,0 +1,32 @@
+img {
+  border-radius: 4px;
+  flex: 1 1 auto;
+  margin: 10px 0px;
+  width: 100%;
+}
+
+#logo {
+  color: darkred;
+  font-weight: bold;
+}
+
+#logo_img {
+  margin: 0 10px 0 0;
+  width: 60px;
+}
+
+/* album artwork on the index page */
+.album_artwork_index {
+  float: left;
+  margin: 0 5px 0 0;
+  width: 42px;
+  height: 42px;
+}
+
+/* artist and album images on the edit pages */
+.artist_image, .album_artwork {
+  float: left;
+  margin-top: 12px;
+  margin-left: 1%;
+  width: 22.5%;
+}
