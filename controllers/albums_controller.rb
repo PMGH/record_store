@@ -47,6 +47,7 @@ post '/big_als/albums/:id' do
   redirect to( "/big_als/albums/#{params[:id]}/edit" )
 end
 
+# delete album
 post '/big_als/albums/:id/delete' do
   album = Album.find(params['id'])
   album.delete()

@@ -16,13 +16,19 @@ end
 
 # get all out of stock albums
 get '/big_als/out_of_stock' do
+  # get all artists
   @artists = Artist.all()
+  # get all out of stock albums
   @oos_albums = Album.out_of_stock()
+  # create empty array
   @oos_artists = []
+  # for each out of stock album
   for album in @oos_albums
+    # if the out of stock album array includes album's artist_id move to the next album (prevent duplicate artist entries)
     if @oos_albums.include?(album.artist_id())
       next
     else
+      # if not, add the album's artist_id to the out of stock artist array
       @oos_artists << album.artist_id()
     end
   end
