@@ -107,6 +107,7 @@ h4 {
 
 .stock_buttons {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin: 1% 15%;
 }

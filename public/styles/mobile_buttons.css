@@ -1,0 +1,13 @@
+/* Mobile friendly */
+
+@media only screen and (max-width: 620px) {
+
+  .btn--all_stock, .btn--oos, .btn--low, .btn--high, .btn--discounted {
+    margin: 5px 2px;
+  }
+
+  .btn {
+    font-size: 13px;
+  }
+
+}
