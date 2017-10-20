@@ -38,7 +38,7 @@ end
 post '/big_als/artists/:id' do
   artist = Artist.new(params)
   artist.update()
-  redirect to( '/big_als' )
+  redirect to( "/big_als/artists/#{params[:id]}/edit" )
 end
 
 # delete existing artist
