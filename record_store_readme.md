@@ -31,7 +31,7 @@ You should be able to add stock, which would have an Artist and Album as well as
 
 ### *Planning:*    
 
-The planning stage of the project initially involved reviewing the **project spec** to clarify what needed to be done to achieve the MVP. Following this I created a **use-case diagram**, drew up **class and object diagrams** and an **table diagram** in [Draw.io](https://www.draw.io/) to solidify my thoughts on the classes I would need, the properties they would possess, the methods they would require and the relationship they would have to the other classes. Next, I created an **activity diagram**, a **site map** and a **REST plan** (mapping REST keywords, URLs, HTTP verbs, and Ruby methods) in order to clarify the path through the site. For **user experience (UX) considerations** and as a blueprint to follow I created a **proto-persona** and several **wireframes** (Stock, New/Edit Artist, New/Edit Album and Discounts pages) using [NinjaMock](https://ninjamock.com/account/register). I also created an **implementations constraints plan** and a **Trello board** to split up and organise the tasks that I needed to complete in order to complete the project. Finally, I wrote **pseudocode** before coding up.     
+The planning stage of the project initially involved reviewing the **project spec** to clarify what needed to be done to achieve the MVP. Following this I created a **use-case diagram**, drew up **class and object diagrams** and a **table diagram** in [Draw.io](https://www.draw.io/) to solidify my thoughts on the classes I would need, the properties they would possess, the methods they would require and the relationship they would have to the other classes. Next, I created an **activity diagram**, a **site map** and a **REST plan** (mapping REST keywords, URLs, HTTP verbs, and Ruby methods) in order to clarify the path through the site. For **user experience (UX) considerations** and as a blueprint to follow I created a **proto-persona** and several **wireframes** (Stock, New/Edit Artist, New/Edit Album and Discounts pages) using [NinjaMock](https://ninjamock.com/account/register). I also created an **implementations constraints plan** and a **Trello board** to split up and organise the tasks that I needed to complete in order to complete the project. Finally, I wrote **pseudocode** before coding up.     
 
 ### *Code Overview:*    
 
@@ -49,7 +49,7 @@ These instructions aim to get a copy of the project up and running on your local
 
 ### Clone    
 
-The project can be cloned and opened (from version control) using the GitHub option on Android Studio.     
+The project can be cloned from GitHub and using the Terminal git clone command (git clone *remote_location clone_name*).     
 
 The project can be cloned with SSH using:  
 [git@github.com:PMGH/record_store.git](git@github.com:PMGH/record_store.git)    
@@ -58,8 +58,7 @@ The project can be cloned with SSH using:
 
 The application can be run in a browser (e.g. Google Chrome).
 
-Navigate to the project root folder (inside record_store_project) in Terminal.
-
+* Navigate to the project root folder (inside record_store_project) in Terminal.
 * A PostGres DB should be created called 'record_store', run 2 commands in Terminal: psql  create database record_store;
 * The db/record_store.sql file should be run in Terminal using PostGres SQL in order to create the DB tables (psql -d record_store -f record_store.sql).
 * OPTIONAL - can seed the database by running the seeds.rb in Terminal when in the project folder (Ruby seeds.rb).
